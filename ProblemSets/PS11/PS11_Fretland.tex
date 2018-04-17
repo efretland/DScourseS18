@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Diamonds in the Rough - Positional Valuation in the NFL Draft}
+\author{Erik Fretland}
+\date{April 2018}
+
+\begin{document}
+
+\maketitle
+
+
+
+
+\section{Introduction}
+\begin{itemize}
+    \item NFL teams obtain the majority of their players through the NFL Draft. Not only are these players young and fresh, they are also relatively very cheaply paid for their first 4-year contract, due to the NFL Players' Association's Collective Bargaining Agreement of 2011. For these two reasons, it is crucial for teams to do a good job evaluating draft prospects and selecting the right players when draft weekend rolls around. 
+    \item However, there are several constraints. One of these is the limited number of draft selections each team has - barring trades, each team has one selection per round of the draft for a total of 7 picks, with the later round picks progressively decreasing in value. Another constraint is, of course, the fact that other teams are competing to pick these same high-quality players, and all teams have access to much of the same player information and evaluation criteria.
+    \item When considering what player should be selected with each pick, the expected return of that pick should be the primary decision driver. However, there are countless factors that go into whether or not a player will be successful and how much on-field impact they will have, ranging from their physical capabilities, to their ability to perform at a high enough level mentally, to their willingness to put in the requisite effort, to the position that they play on the field, among many others. Accounting for this, it is still possible to estimate whether a pick is a smart selection, by looking at it through the framework of opportunity cost. 
+    \item This opportunity cost can be considered through several lenses. Before diving into those, it is worth briefly addressing the nature of the "team" sport of football. It is an immutable fact that certain positions have a higher impact on the outcomes of games than others, for example quarterbacks being more important than tight ends or linebackers. Therefore, even if two players at different positions are equally good prospects (i.e., have an equally good chance of becoming quality NFL players), they may not necessarily be equally valued in the draft. 
+    \item With that in mind, there is one other consideration when looking at whether a pick is a success or not. There are a range of potential outcomes for a player just entering the NFL, whether becoming a solid contributor to a team, an impactful starter, a game-changing player, or even flaming out and "busting" entirely. Some prospects might have both a higher chance of being a star OR busting, but that could lead to having the same expected value of a safer prospect without the same high upside. All of these potential outcomes are important to consider when teams think about how to use their limited ammunition to add talent to their roster.
+    \item Going back to the idea of the opportunity cost, the most obvious way to look at it is that if a higher pick is used on a player at Position X, then that pick cannot be used on other players at other positions. The concept of scarcity is just as relevant to the NFL as it is to other economic markets, and there are only so many good players at any given position. The purpose of this study is to determine the most market-efficient use of a team's draft picks to maximize player impact, minimize bust rate, and give a team's overall draft class the best chance to provide value to the team throughout the course of their rookie contracts and ideally beyond.
+\end{itemize}
+
+\section{Literature Review}
+\begin{itemize}
+    \item Justis Mosqueda, a writer for BleacherReport, Setting the Edge, CheeseheadTV, and other sites (as well as a prospect evaluator and innovative football analyst) describes the NFL Draft as only being 4 or 5 rounds long. The idea behind this is that, after a certain point in the draft, there is too much uncertainty regarding whether or not a player will be a contributor at the NFL level. At this point, there are very few "safe" bets, so NFL teams will start looking to fill positions of need and hoping one of the selections will pan out, or they will allow factions within their talent evaluation team more influence over the selection process in order to get a new perspective on the players that are left available. A brief glance at the scatterplot of Average Value per Game by Draft Pick shows us that there starts to be a dropoff in AV/Game at around pick 180, or right after the start of the 6th round.
+    
+    https://cheeseheadtv.com/blog/being-ted-thompson-final-packers-draft-tendencies-update-357
+    
+    \item Mosqueda also believes that how teams truly value players and positions can be measured by how much guaranteed money the average of the top 10 players at each position receive. In the NFL, most contracts are not fully guaranteed or even close, so the portions of the contracts that actually are guaranteed are what truly reflect value. For example -the fifth largest quarterback contract in the NFL today is worth 86 million dollars guaranteed, while the fifth largest cornerback contract is worth 48 million guaranteed, and the fifth largest tight end contract is worth 24.2 million guaranteed - thus reflecting the value disparity of those positions.
+    
+    
+    http://settingedge.com/what-nfl-contracts-actually-mean
+    
+\end{itemize}
+
+\section{Data}
+
+The data used was obtained from Pro Football Reference's draft database. It includes information on players, their draft slot, their position, their age, their career accolades, games played and started, and their Career Average Value. Once I pulled this data, I edited the position data to more accurately reflect their usage in the NFL, changing DEs to either EDGE or DT, changing OL to either T, G, or C, changing WR to OWR or SWR, and more specifically defining the LB position. I also created formulas to determine which players were classified as busts, contributors, impactful starters, or stars, based on how their careers had gone up to that point. I also created bins for draft slots, rather than simply identifying a player as an x-round pick, I created slots of 12, allowing more narrow classification and prediction through looking at the expected value of a pick at Y position in Z draft slot (group of 12 picks).
+
+\section{Methodology}
+My choice of model is still uncertain. When originally planning this analysis, I was more interested in the categorical means of Average Value by position and draft slot, bust percentage, contributor percentage, impactful starter percentage, and star percentage. I'm not sure I have enough information to do a classification model without additional information on prospects (i.e. athletic testing numbers, college performance numbers, or the information specific to each player that sets them apart from the collective average of players at their position). I plan on doing a good amount of visualization to express the dropoffs of value throughout the draft at each position. I could also do a linear model to describe the relationship of draft position and position on Average Value, among other things. 
+
+\section{Expected Findings}
+
+As mentioned previously, I expect to find several market inefficiencies regarding where players are drafted.
+\begin{itemize}
+    \item I believe QBs taken outside the first 36 picks have a very high bust rate, and that it is almost impossible to find an impactful starter at QB outside the first 36 picks. 
+    \item I believe players at "lower-value" positions can be drafted in the mid and even late rounds at a less significant talent dropoff than those players at higher value positions.
+    \item I believe certain positions are rarely if ever worth top-60 picks due to the opportunity cost of taking those positions.
+    \item I believe premier positions such as QB, CB, DE, and OT should be the top considerations for all picks within the top 48 picks for a "smart" NFL team, barring obvious prospect-quality differences that would indicate a player at another position should be selected (which this study will not cover).
+\end{itemize}
+
+\section{Conclusion}
+
+I am going to wait to see what the data shows in regards to the expected value of players selected at various draft spots. Overall, the NFL does a decent job of accurately valuing players entering the league, but there is a large degree to which smart teams can take advantage of market ineffiencies.
+
+
+\begin{thebibliography}{2}
+
+\bibitem{cheeseheadtvwebsite} 
+Mosqueda: Being Ted Thompson - Final Packers Draft Tendencies,
+\\\texttt{https://cheeseheadtv.com/blog/being-ted-thompson-final-packers-draft-tendencies-update-357/\~{}uno/abcde.html}
+
+\bibitem{settingtheedgewebsite} 
+Mosqueda: What NFL Contracts Actually Mean,
+\\\texttt{http://settingedge.com/what-nfl-contracts-actually-mean/\~{}uno/abcde.html}
+
+\bibliography{PS11_Fretland}
+\end{thebibliography}
+
+\end{document}
