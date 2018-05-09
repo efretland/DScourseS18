@@ -1,0 +1,9 @@
+To execute this project:
+
+Access the collected 3rd down data from this link 
+https://docs.google.com/spreadsheets/d/1t92PiIVipoeDt-ijd6RoHIWu-esVm8TdDplZXDRAJxY/edit?usp=sharing
+and save it to your local machine. 
+
+This is the only place the data is available, as it was collected specifically for this project.
+
+Once the data is saved to a local machine, change the relevant filename and working directory information in the R file and it should be ready to run.
